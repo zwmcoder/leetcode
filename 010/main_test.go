@@ -37,9 +37,14 @@ var testCases = []testCase{
 		p:   "mis*is*p*.",
 		ret: false,
 	},
+	{
+		s:   "aasdfasdfasdfasdfas",
+		p:   "aasdf.*asdf.*asdf.*asdf.*s",
+		ret: true,
+	},
 }
 
-func TestIsPalindrome(t *testing.T) {
+func TestIsMatch(t *testing.T) {
 	for _, v := range testCases {
 		fmt.Println(v)
 		ret := IsMatch(v.s, v.p)
