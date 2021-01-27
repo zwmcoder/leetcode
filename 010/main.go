@@ -33,8 +33,8 @@ func IsMatch(s string, p string) bool {
 					state[i][j] = state[i][j-2]
 				} else {
 					// For case 2 and case 3 s[i-1]==p[j-2]=='c'
-					// case 2: This is the case * means 1 repeat,  s = "aabc" p = "aabc*"
-					// case 3: This is the case * means 2 repeat,  s = "aabcc" p = "aabc*"
+					// case 2: This is the case * means 1 repeat,  s = "aabc" p = "aabc*"  : state[i][j-1]
+					// case 3: This is the case * means 2 repeat,  s = "aabcc" p = "aabc*" : state[i-1][j]
 					state[i][j] = state[i][j-1] || state[i-1][j]
 				}
 			}
