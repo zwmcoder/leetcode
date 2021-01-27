@@ -5,18 +5,46 @@ import (
 	"testing"
 )
 
-var testCase = map[int]bool{
-	121:  true,
-	-121: false,
-	10:   false,
+type testCase struct {
+	s   string
+	p   string
+	ret bool
+}
+
+var testCases = []testCase{
+	{
+		s:   "aa",
+		p:   "a",
+		ret: false,
+	},
+	{
+		s:   "aa",
+		p:   "a*",
+		ret: true,
+	},
+	{
+		s:   "ab",
+		p:   ".*",
+		ret: true,
+	},
+	{
+		s:   "aab",
+		p:   "c*a*b",
+		ret: true,
+	},
+	{
+		s:   "mississippi",
+		p:   "mis*is*p*.",
+		ret: false,
+	},
 }
 
 func TestIsPalindrome(t *testing.T) {
-	for k, v := range testCase {
-		fmt.Println(k)
-		ret := IsPalindrome(k)
-		if ret != v {
-			t.Errorf("Error! expect %v but received %v", v, ret)
+	for _, v := range testCases {
+		fmt.Println(v)
+		ret := IsMatch(v.s, v.p)
+		if ret != v.ret {
+			t.Errorf("Error! expect %v but received %v", v.ret, ret)
 		}
 	}
 }
