@@ -37,7 +37,7 @@ var testCases = []testCase{
 func TestMaxArea(t *testing.T) {
 	for _, v := range testCases {
 		fmt.Println(v)
-		ret := MaxArea(v.s)
+		ret := MaxAreaOn(v.s)
 		if ret != v.ret {
 			t.Errorf("Error! expect %v but received %v", v.ret, ret)
 		}
