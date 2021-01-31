@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"sort"
 )
 
@@ -11,7 +10,6 @@ func ThreeSumClosest(nums []int, target int) int {
 	}
 
 	sort.Ints(nums)
-	fmt.Println(nums)
 	var i, j, k int
 	ret := 0xFFFFFFFF
 
@@ -24,11 +22,8 @@ func ThreeSumClosest(nums []int, target int) int {
 
 		j = i + 1
 		k = len(nums) - 1
-		fmt.Printf("111:%d %d %d\n", i, j, k)
 		for j < k {
 			n = nums[i] + nums[j] + nums[k]
-			fmt.Printf("%d %d %d\n", i, j, k)
-			fmt.Printf("n %d\n", n)
 			if n > target {
 				if n-target < ret {
 					ret = n - target
@@ -47,6 +42,5 @@ func ThreeSumClosest(nums []int, target int) int {
 
 		}
 	}
-	fmt.Println("The result is ", n)
 	return retn[ret]
 }
