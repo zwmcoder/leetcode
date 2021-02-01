@@ -8,24 +8,19 @@ type ListNode struct {
 }
 
 func RemoveNthFromEnd(head *ListNode, n int) *ListNode {
-	if head == nil {
+	if head == nil || head.Next == nil {
 		return nil
 	}
 
-	if head.Next == nil {
-		if n == 1 {
-			return nil
-		} else {
-			return nil
-		}
+	rawHead := head
+
+	for ; n > 0 && head.Next != nil; n-- {
+		head = head.Next
 	}
 
-	rawHead := head
-	// n need move one more step, since we need the node 3 not node 4
-	// for the example picture at description
-	// So set n >= 0, not n > 0
-	for ; n >= 0 && head.Next != nil; n-- {
-		head = head.Next
+	// n == 1, means n equal the length of the list, the head node been removed
+	if n == 1 {
+		return rawHead.Next
 	}
 
 	cursor := rawHead

@@ -31,12 +31,21 @@ func TestFourSum(t *testing.T) {
 	val3.Next = val4
 	val4.Next = val5
 
+	fmt.Println("#################")
 	ret := RemoveNthFromEnd(val1, 2)
 	for ; ret != nil; ret = ret.Next {
 		fmt.Println(ret.Val)
 	}
 
+	fmt.Println("#################")
 	val2.Next = nil
+	ret = RemoveNthFromEnd(val1, 2)
+	for ; ret != nil; ret = ret.Next {
+		fmt.Println(ret.Val)
+	}
+
+	fmt.Println("#################")
+	val1.Next = nil
 	ret = RemoveNthFromEnd(val1, 2)
 	for ; ret != nil; ret = ret.Next {
 		fmt.Println(ret.Val)
