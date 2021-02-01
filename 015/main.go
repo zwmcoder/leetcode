@@ -22,6 +22,7 @@ func ThreeSum(nums []int) [][]int {
 			n := nums[i] + nums[j] + nums[k]
 			if n == 0 {
 				result = append(result, []int{nums[i], nums[j], nums[k]})
+				// skip  duplicate j
 				l := j
 				for l < k && nums[l] == nums[j] {
 					l++
