@@ -34,7 +34,6 @@ func MergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 
 	index = head
 	for l1 != nil || l2 != nil {
-		//	fmt.Println(l1.Val, l2.Val)
 		if l1.Val <= l2.Val {
 			// l1 reach the end, and v1.Val is smaller, so set cursour index.Next to l1
 			// And set l1.Next to l2, and can go out of this loop
@@ -57,9 +56,11 @@ func MergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 		}
 		index.Next = tmp
 		index = index.Next
-
-		fmt.Println("###index ", index.Val)
 	}
 
 	return head
+}
+
+// think using recursion
+func UseRecursionMergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 }
