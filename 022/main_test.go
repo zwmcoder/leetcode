@@ -44,7 +44,7 @@ var testCases = []testCase{
 func TestIsValid(t *testing.T) {
 	for _, v := range testCases {
 		fmt.Println(v)
-		ret := GenerateParenthesis(v.s)
+		ret := GenerateParenthesisDP(v.s)
 		fmt.Println(ret)
 	}
 }
