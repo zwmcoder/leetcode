@@ -7,6 +7,8 @@ type ListNode struct {
 	Next *ListNode
 }
 
+// This method do not use extra space.
+// If use extra space, should be more simple
 func MergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 	var head, index, tmp *ListNode
 
