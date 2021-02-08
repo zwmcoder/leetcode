@@ -5,46 +5,46 @@ import (
 	"testing"
 )
 
-func TestMergeTwoLists(t *testing.T) {
-	val1 := &ListNode{
-		Val:  1,
-		Next: nil,
-	}
-	val2 := &ListNode{
-		Val:  2,
-		Next: nil,
-	}
-	val3 := &ListNode{
-		Val:  4,
-		Next: nil,
-	}
+type testCase struct {
+	s   int
+	ret []string
+}
 
-	val4 := &ListNode{
-		Val:  1,
-		Next: nil,
-	}
-	val5 := &ListNode{
-		Val:  3,
-		Next: nil,
-	}
-	val6 := &ListNode{
-		Val:  7,
-		Next: nil,
-	}
+var testCases = []testCase{
+	//	{
+	//		s:   "()",
+	//		ret: true,
+	//	},
+	{
+		s:   3,
+		ret: []string{"((()))", "(()())", "(())()", "()(())", "()()()"},
+	},
+	{
+		s:   2,
+		ret: []string{"(())", "()()"},
+	},
+	//	{
+	//		s:   "(]",
+	//		ret: false,
+	//	},
+	//	{
+	//		s:   "(]",
+	//		ret: false,
+	//	},
+	//	{
+	//		s:   "([)]",
+	//		ret: false,
+	//	},
+	//	{
+	//		s:   "{[]}",
+	//		ret: true,
+	//	},
+}
 
-	val1.Next = val2
-	val2.Next = val3
-	val4.Next = val5
-	val5.Next = val6
-
-	//	fmt.Println("#################")
-	//	ret := MergeTwoLists(val1, val4)
-	//	for ; ret != nil; ret = ret.Next {
-	//		fmt.Println(ret.Val)
-	//	}
-	fmt.Println("#################")
-	ret := MergeTwoLists(val3, val6)
-	for ; ret != nil; ret = ret.Next {
-		fmt.Println(ret.Val)
+func TestIsValid(t *testing.T) {
+	for _, v := range testCases {
+		fmt.Println(v)
+		ret := GenerateParenthesis(v.s)
+		fmt.Println(ret)
 	}
 }
