@@ -13,13 +13,16 @@ func MergeKLists(lists []*ListNode) *ListNode {
 	min_idx := 0
 	min_val := lists[0].Val
 
-	var head, tmp *ListNode
+	var tmp *ListNode
+
+	nodeList := make([]*ListNode, 0)
+Loop:
 	for {
 		for k, v := range lists {
 			if v == nil {
 				nil_count++
 				if nil_count == n {
-					break
+					break Loop
 				}
 				continue
 			}
@@ -30,16 +33,19 @@ func MergeKLists(lists []*ListNode) *ListNode {
 		}
 		tmp = lists[min_idx]
 		if first {
-			head = tmp
 			first = false
 		}
 
 		if tmp != nil {
 			lists[min_idx] = tmp.Next
 		}
-
+		nodeList = append(nodeList, tmp)
 	}
 
-	return head
+	for idx := 0; idx < len(nodeList)-1; idx++ {
+		nodeList[idx].Next = nodeList[idx+1]
+	}
+
+	return nodeList[0]
 
 }
