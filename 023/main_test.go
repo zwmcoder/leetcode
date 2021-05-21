@@ -49,10 +49,15 @@ func TestMergeKLists(t *testing.T) {
 
 	val21.Next = val22
 
-	lists := []*ListNode{val1, val11, val21}
+	//	lists := []*ListNode{val1, val11, val21}
+	//	fmt.Println("#################")
+	//	ret := MergeKLists(lists)
+	//	for ; ret != nil; ret = ret.Next {
+	//		fmt.Println(ret.Val)
+	//	}
+
+	lists := []*ListNode{}
 	fmt.Println("#################")
 	ret := MergeKLists(lists)
-	for ; ret != nil; ret = ret.Next {
-		fmt.Println(ret.Val)
-	}
+	fmt.Println(ret)
 }
