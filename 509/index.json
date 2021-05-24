@@ -1,0 +1,16 @@
+{
+  "version": "2.0",
+  "clipId": "1621825224",
+  "format": "md",
+  "title": "Fibonacci Number - LeetCode",
+  "link": "https://leetcode.com/problems/fibonacci-number/",
+  "category": "509",
+  "tags": [],
+  "created_at": "2021-05-24 11:00:24",
+  "mainPath": "index.md",
+  "paths": [
+    "index.json",
+    "a-title_Fibonacci-Number-LeetCode",
+    "index.md"
+  ]
+}
